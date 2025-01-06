@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <a href="../index.html">return Home</a>
+    <h1>Issue #6 : Trailing black lines when resizing window</h1>
+    <p> I have been making my own game engine recently and while learning about creating windows on the window operating system (what a mouthful), I have come accross an issue. 
+        The problem is that whenever a window that is created from my window class is resized, there are black lines that appear in the bottom and right of the window.
+        Here is the code that creates the window:
+    </p>
+    <code>
+        <pre>
+            pub fn wWinMain(hInstance: Ziglib.window.HINSTANCE, hPrevInstance: ?Ziglib.window.HINSTANCE, lpCmdLine: ?[*]u16, nCmdShow: i32) i32 {
+                std.debug.print("wWinMain called\n", .{});
+                // Mark unused parameters as unused
+                _ = nCmdShow;
+                _ = hPrevInstance;
+                const test_window = Ziglib.window.window;
+                const other_window = Ziglib.window.window;
+                // If lpCmdLine is not null, handle it properly
+                if (lpCmdLine) |cmdLine| {
+                    var cmdLineLen: usize = 0;
+                    while (cmdLine[cmdLineLen] != 0) {
+                        cmdLineLen += 1;
+                    }
+                    const cmdLineSlice = cmdLine[0..cmdLineLen];
+                    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+                    defer arena.deinit();
+                    var utf8CmdLineBuf = arena.allocator().alloc(u8, cmdLineLen * 4) catch |err| {
+                        std.debug.print("Error allocating memory: {s}\n", .{@errorName(err)});
+                        return 1;
+                    };
+                    defer arena.allocator().free(utf8CmdLineBuf);
+                    const utf8CmdLineLen = std.unicode.utf16leToUtf8(utf8CmdLineBuf, cmdLineSlice) catch |err| {
+                        std.debug.print("Error converting UTF-16 to UTF-8: {s}\n", .{@errorName(err)});
+                        return 1;
+                    };
+                    std.debug.print("Command line: {s}\n", .{utf8CmdLineBuf[0..utf8CmdLineLen]});
+                } else {
+                    std.debug.print("No command line arguments\n", .{});
+                }
+                const test_window = Ziglib.window.window;
+                test_window.createWindowClass(hInstance) catch |err| {
+                    std.debug.print("Error creating window class: {s}\n", .{@errorName(err)});
+                    return 1;
+                };
+                _ = test_window.registerClass();
+            
+                test_window.createWindow() catch |err| {
+                    std.debug.print("Error creating window: {s}\n", .{@errorName(err)});
+                    return 1;
+                };
+                test_window.showWindow() catch |err| {
+                    std.debug.print("Error showing window: {s}\n", .{@errorName(err)});
+                    return 1;
+                };
+                test_window.updateWindow() catch |err| {
+                    std.debug.print("Error updating window: {s}\n", .{@errorName(err)});
+                    return 1;
+                };
+                test_window.messageLoop() catch |err| {
+                    std.debug.print("Error in message loop: {s}\n", .{@errorName(err)});
+                    return 1;
+                };
+                return 0;
+            }
+        </pre>
+    </code>
+    <p>For now I do not know what the issue is, but when I will find out, I will make a followup post explaining the issue and how to fix it.</p>
+
+    
+</body>
+</html>
