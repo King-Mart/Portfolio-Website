@@ -3,77 +3,11 @@ body {
     font-family: "Inter", sans-serif;
     margin: 0px;
     padding: 0px;
-    background-color: rgb(234, 246, 254);
+    background-color: rgb(255, 255, 255);
     
 }
-
-.top {
-    text-align: center;
-    margin: 0px;
-    padding-top: 2%;
-    background-color: rgb(53, 119, 167);
-}
-
-.top h1 {
-    margin: 0px;
-    padding: 0px;
-    color: white;
-}
-
-
-/* Sidebar Styling */
-.sidebar {
-    width: 250px;
-    background-color: #333; /* Sidebar background color */
-    color: #fff;
-    padding: 20px;
-    height: 100vh; /* Full height sidebar */ /*What is a vh?*/
-    position: fixed; /* Sticks the sidebar to the left */
-}
-
-.sidebar h4 {
-    margin-top: 0;
-    margin-bottom: 6px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 18px;
-    color: #f0f0f0;
-}
-
-.sidebar nav {
+.top-navigation {
     display: flex;
-    flex-direction: column; /* Ensures links stack vertically */
-    gap: 15px; /* Space between links */
-}
-
-.sidebar nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.sidebar nav a:hover {
-    color: #03203f;
-    text-decoration: underline;
-}
-
-
-
-.top h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
-.top h3 {
-    font-size: 24px;
-    margin-top: 5px;
-    color: #13526e;
-}
-
-.top p {
-    font-size: 16px;
-    margin: 0;
-    text-align: center;
-
+    flex-direction: row;
+    justify-content: space-evenly;
 }
