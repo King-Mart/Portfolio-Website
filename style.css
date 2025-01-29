@@ -17,12 +17,17 @@ body {
 
 .top-navigation #name {
     font-size: 24px;
-    line-height: 280%;
+    line-height: 1.5rem;
+    height: 100%;
 
     font-weight: 600;
     font-family: "Inter", sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+.top-navigation #active {
+    background-color: rgb(55, 201, 242);
+    color: rgb(255, 255, 255);
 }
 .top-navigation nav {
     display: flex;
@@ -31,7 +36,7 @@ body {
 .top-navigation a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    padding: 5% 16px;
+    padding: 14px 16px;
     text-align: center;
     font-size: 17px;
     font-weight: 600;
