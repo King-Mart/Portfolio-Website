@@ -8,8 +8,36 @@ body {
 }
 .top-navigation {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    
+    width: 100%;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
+}
+.top-navigation nav {
+    display: contents;
+}
+
+.top-navigation a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+    border-left: 2px solid rgb(255, 255, 255);
+    display: inline-block;
+
+}
+
+.top-navigation a:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    
+    /* Changing the display property to block on hover has a cool effect but is not working when hovering a link that would no longer be at the same place anymore*/
+
 }
