@@ -1,0 +1,43 @@
+body {
+    background-color: #151D28;
+    margin: 0px;
+    color: #F1F7ED;
+}
+.top-navigation {
+    height: 60px;
+    background-color: #111015;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+.top-navigation a {
+    color: #F1F7ED;
+    text-decoration: none;
+}
+.map-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+.map-nav a {
+    color: #F1F7ED;
+    background-color: #93032E;
+    text-decoration: none;
+}
+
+.top-navigation #brand  {
+    font-size: 24px;
+    line-height: 1.5rem;
+    height: 100%;
+    padding: 10px;
+
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.top-navigation #brand a {
+    font-weight: 600;
+    font-style: italic;
+}
+/* #8789C0 */
