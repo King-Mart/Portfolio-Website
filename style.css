@@ -6,6 +6,8 @@ body {
     background-color: rgb(255, 255, 255);
     
 }
+
+/* Top Navigation */
 .top-navigation {
     display: flex;
     justify-content: space-between;
@@ -55,4 +57,9 @@ body {
     
     /* Changing the display property to block on hover has a cool effect but is not working when hovering a link that would no longer be at the same place anymore*/
 
+}
+
+#name a {
+    border-left: none;
+    
 }
